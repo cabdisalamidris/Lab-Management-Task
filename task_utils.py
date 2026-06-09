@@ -34,7 +34,7 @@ def mark_task_as_complete(index, tasks=tasks):
 
     task = tasks[index - 1]
     task["completed"] = True
-    print(f"Task '{task['title']}' marked as complete!")
+    print("Task marked as complete!")
     return task
     
 # Implement view_pending_tasks function
