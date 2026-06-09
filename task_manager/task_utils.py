@@ -1,19 +1,14 @@
 from datetime import datetime
-from validation import validate_task_title, validate_task_description, validate_due_date
+from .validation import validate_task_title, validate_task_description, validate_due_date
 
 # Define tasks list
 tasks = []
 
 # Implement add_task function
 def add_task(title, description, due_date):
-    if not validate_task_title(title):
-        raise ValueError("Task title must be at least 1 character long.")
-
-    if not validate_task_description(description):
-        raise ValueError("Task description must be at least 5 characters long.")
-
-    if not validate_due_date(due_date):
-        raise ValueError("Due date must be in YYYY-MM-DD format and not in the past.")
+    validate_task_title(title)
+    validate_task_description(description)
+    validate_due_date(due_date)
 
     task = {
         "title": title.strip(),
