@@ -26,7 +26,4 @@ def validate_due_date(due_date):
     except ValueError:
         raise ValueError("Due date must be in YYYY-MM-DD format.")
 
-    today = datetime.now().date()
-    if parsed_date < today:
-        raise ValueError("Due date cannot be in the past.")
     return True
